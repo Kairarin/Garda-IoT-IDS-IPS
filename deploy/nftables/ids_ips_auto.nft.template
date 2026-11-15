@@ -1,0 +1,18 @@
+# GARDA-IoT · table firewall IPS
+# Dibuat otomatis oleh deploy/scripts/setup_nftables.sh (placeholder __ESP32_IP__ diganti dari garda.env).
+table inet ids_ips_auto {
+	set blocked_attackers {
+		type ipv4_addr
+		timeout 1m
+	}
+
+	set cooldown_guard {
+		type ipv4_addr
+		timeout 6m
+	}
+
+	chain forward {
+		type filter hook forward priority filter - 10; policy accept;
+		iifname "__HOST_VETH__" oifname "__LAN_IF__" ip saddr @blocked_attackers ip daddr __ESP32_IP__ counter drop
+	}
+}

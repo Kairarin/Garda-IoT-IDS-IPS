@@ -1,0 +1,9 @@
+<decoder name="ids_stateful_parent">
+    <prematch>CONFIRMED_DOS_ATTACK|UNDER_MONITORING|AUTO_BLOCK|MANUAL_BLOCK|RECOVERY_MONITORING</prematch>
+</decoder>
+
+<decoder name="ids_stateful_fields">
+    <parent>ids_stateful_parent</parent>
+    <regex>src_ip=(\S+) rtt_ms=(\S+) cpu_load=(\S+) device=(\S+)</regex>
+    <order>srcip,rtt_ms,cpu_load,device</order>
+</decoder>

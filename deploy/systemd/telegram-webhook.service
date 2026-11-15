@@ -1,0 +1,20 @@
+[Unit]
+Description=Telegram IDS Response Controller
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+
+User=root
+Group=root
+
+ExecStart=/usr/bin/python3 /usr/local/bin/telegram_webhook.py
+
+Restart=always
+RestartSec=3
+
+EnvironmentFile=/etc/ids-telegram.env
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,3 @@
+# Izinkan server.py menjalankan nft tanpa password (dipakai IPS).
+# Pasang dengan:  sudo visudo -f /etc/sudoers.d/ids-nft   (ganti <user>)
+<user> ALL=(root) NOPASSWD: /usr/sbin/nft

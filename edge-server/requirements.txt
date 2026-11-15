@@ -1,0 +1,14 @@
+# Focused application/model dependencies.
+# Versions are taken from the installed Raspberry Pi virtual environment.
+# Check model compatibility before installing on another architecture.
+
+Flask==3.1.3  # Flask application and HTTP API
+numpy==2.4.4  # Numerical processing
+pandas==3.0.2  # Dataset and feature processing
+joblib==1.5.3  # Loading serialized ML models
+psutil==7.2.2  # Raspberry Pi resource monitoring
+wcwidth==0.8.0  # Terminal display formatting
+waitress==3.0.2  # HTTP server runtime
+requests==2.33.1  # Controlled DoS test client
+scikit-learn==1.8.0  # ML model runtime support
+xgboost==3.2.0  # XGBoost model runtime support

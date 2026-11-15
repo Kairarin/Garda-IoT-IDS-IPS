@@ -1,0 +1,25 @@
+# --- Rahasia & konfigurasi lokal (JANGAN di-commit) ---
+firmware/esp32_rtt/config.h
+.ids_test_token
+**/.ids_test_token
+*.env
+!*.env.example
+garda.env
+ids-telegram.env
+
+# --- Python ---
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# --- Data & log runtime yang dibuat server ---
+edge-server/dataset_realtime_log.csv
+*.log
+
+# --- Build Arduino / editor / OS ---
+build/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

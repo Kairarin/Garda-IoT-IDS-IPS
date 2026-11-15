@@ -1,0 +1,10 @@
+<group name="ids_stateful,iotdos,">
+
+  <rule id="100100" level="12">
+    <decoded_as>ids_stateful_parent</decoded_as>
+    <match>CONFIRMED_DOS_ATTACK</match>
+    <description>IoT IDS: Confirmed DoS attack detected from $(srcip) against $(device).</description>
+    <group>dos,attack,ids_alert,</group>
+  </rule>
+
+</group>

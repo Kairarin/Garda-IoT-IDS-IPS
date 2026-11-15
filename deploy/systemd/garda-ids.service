@@ -1,0 +1,16 @@
+# GARDA-IoT edge server sebagai layanan systemd (opsional).
+# Ganti <user> sesuai user di Raspberry Pi, lalu salin ke /etc/systemd/system/.
+[Unit]
+Description=GARDA-IoT Edge IDS/IPS Server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=<user>
+WorkingDirectory=/home/<user>/garda-iot/edge-server
+EnvironmentFile=/etc/garda-iot/garda.env
+ExecStart=/home/<user>/garda-iot/edge-server/venv/bin/python -u server.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
